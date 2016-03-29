@@ -1,14 +1,18 @@
 <!doctype html>
-<html lang="en" ng-app="App1">
+<html lang="en" ng-app="App2">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
 <body ng-controller="App1Ctrl">
+    <h3>Enter color</h3>
     <input ng-model="msg"/>
     <span style="color: {{ msg }}">{{ msg }}</span>
+    <div id="color-container"></div>
+    <h3>Or generate one</h3>
     <button ng-click="randomColor()">Random color</button>
+    <button ng-click="insertColor()">Insert color</button>
     <script src="../libs/angular.min.js"></script>
-    <script src="app.js"></script>
+    <script src="2_app.js"></script>
 </body>
 </html>

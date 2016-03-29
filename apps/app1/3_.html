@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" ng-app="App3">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <div ng-controller="App3Ctrl">
+        <h3>Colors list</h3>
+        <ul id="colors_list"></ul>
+        <div>
+            <input ng-model="newColor" />
+            <button ng-click="addNewColor()"></button>
+        </div>
+    </div>
+
+<script src="../libs/angular.min.js"></script>
+<script src="3_app.js"></script>
+</body>
+</html>
