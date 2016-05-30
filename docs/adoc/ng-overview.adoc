@@ -1,0 +1,178 @@
+= AngularJS basics
+some basic ideas, presentation chunks
+
+++++
+<link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css">
+++++
+
+:icons: font
+
+== Framework definition
+
+angularjs - *single page applications*, structural framework for dynamic apps
+
+== Data binding
+
+It's all about data binding - most basic and impressive feature +
+HTML becomes a *live template* that depicts the background javascript model +
+The *ng-app* directive says that everything inside is and ng application and should become this live template
+
+[source,html]
+<html ng-app>
+
+Any time the model is changed in the client-side model, the view reflects these changes without writing any custom code. *It just works*
+ 
+TIP: This process is dirty checking. Dirty checking is a relatively efficient approach to checking for
+changes on a model. Every time there could be a potential change, Angular will do a dirty check
+inside its event loop (discussed in depth in the under the hood chapter) to ensure everything is
+consistent.
+
+*ng* uses HTML5 power to say *how the data should be displayed*
+
+On the other side the *javascript model* in the background *is always in sync* because the binding is *bi-directional*
+
+TIP: Bi-directional in this context means that if the view changes the value, the model
+observes the change through dirty checking, and if the model changes the value, the
+view update with the change.
+
+=== DOM to model binding
+The code in `{{ }}` is called an *expression* - it is *evaluated* if it's a part of the ng-app
+[source,html]
+<input ng-model="person.name" type="text" placeholder="Your name">
+<h1>Hello {{ person.name }}</h1>
+
+=== Model to DOM binding
+To do the versa we need to write a *controller* which will be covered further; in controllers we can update the model so the view is updated as well
+
+== Modules
+
+Modules are containers for ng components:
+
+* Controllers
+* Services
+* Directives
+
+Advantages of using modules:
+
+* Keeping our global namespace clean
+* Making tests easier to write and keeping them clean so as to more easily target isolated
+functionality
+* Making it easy to share code between applications
+* Allowing our app to load different parts of the code in any order
+
+IMPORTANT: In JavaScript, placing functional code in the global namespace is rarely a good idea. It can cause
+collisions that are tough to debug and cost us precious development time.
+
+`*module*` function is a *creation function* (2 parameters) and *getter* (1 parameter) at the same time
+
+[source,javascript]
+angular.module('myApp', []) // create module
+angular.module('myApp') // get the module
+
+== Scopes
+
+[quote, ng-book]
+Scope is the *core* of any ng app
+it's the *application model* or *view model* +
+it's the *glue* between HTML view and javascript model +
+it's the *source of truth* for the application state +
+
+`$scope` is like in Java - the context between {}
+`$scope` is hierarchical: it mimics the DOM, it's nestable
+there can be parent for every scope except `$rootScope` which is always by default
+
+=== Functions of scopes
+
+* they have *observers* to watch the model changes
+* propogate the model changes through the application (to nested scopes and directives)
+* functionality isolation (isonated scopes) and properties isolation
+* they are execution environment in which expressions are evaluated
+
+Execution context is important: when the browser receives a JavaScript callback that executes inside of the Angular execution
+context (check out the digest loop), the $scope will be made aware of the model mutation
+
+NOTE: If the callback executes outside of the Angular context, we can force the $scope to have
+knowledge of the change using the $apply method.
+
+=== Scope lifecycle
+
+* creation - when controller or directive is created, ng creates a new scope as well with `$injector`
+* linking - when scope is linked all directives that create their own scopes will register *watches* to watch the propogate changes
+* updating - the working phase: during $digest call on the $rootScope all scopes will check dirty, perform updates if required and propogate changes
+* destruction - `scope.$destroy()` event will be broadcasted
+
+== Expressions
+
+Generally ng-apps can be written without any javascript, all logic can be embedded in *directives* and *xpressions*
+
+Expressions are code blocks inside `{{ }}` notation in HTML page. 
+Expressions are evaluated in a `$scope` context, so any variable from scope can be a part of an expression
+
+Expressions in ng are pretty much the same thing as EL in *Spring* or *JSF* except the fact that they are always a part of binding - this means that whenever the property in the model changes which is a part of an expression and the `$digest` function was called on the property's scope - expression will be re-evaluated with the new property value
+
+* All expressions are executed in the context of the scope and have access to local $scope variables.
+* An expression doesn’t throw errors if it results in a TypeError or a ReferenceError.
+* They do not allow for any control flow functions (conditionals; e.g., if/else).
+* They can accept a filter and/or filter chains.
+
+Expressions purpose is to present the data in one way or another or write really simple controls (like setting the flag)
+
+`$parse` service is used to evaluate expressions in the background
+
+`$interpolate` service is used to interpolate string text containing expressions with some scope data
+
+=== Filters for expressions
+
+Expressions can have a pipe notation `|` after which a *filter* goes which modifies the evaluation result in some way +
+There are many types of filters, for example:
+
+*number*
+
+[source,html]
+<!-- Displays: 123.46 -->
+{{ 123.456789 | number:2 }}
+
+*date*
+
+[source,html]
+{{ today | date:'medium' }} <!-- Aug 09, 2013 12:09:02 PM -->
+{{ today | date:'short' }} <!-- 8/9/13 12:09 PM -->
+{{ today | date:'fullDate' }} <!-- Thursday, August 09, 2013 -->
+{{ today | date:'yyyy' }} <!-- 2013 -->
+{{ today | date:'MMM' }} <!-- Aug -->
+{{ today | date:'hh:mm:ss.sss' }} <!-- 12:09:02.995 -->
+
+*filter* +
+The filter filter selects a subset of items from an array of items and returns a new array. This
+filter is generally used as a way to filter out items for display
+
+[source,html]
+{{ ['Ari', 'Lerner', 'Likes', 'To', 'Eat', 'Pizza'] | filter:'e' }}
+<!-- ["Lerner","Likes","Eat"] -->
+{{ ['Ari', 'likes', 'to', 'travel'] | filter:isCapitalized }}
+<!-- ["Ari"] -->
+
+*json*
+
+[source,html]
+{{ {'name': 'Ari', 'City': 'San Francisco'} | json }}
+<!--
+{
+"name": "Ari",
+"City": "San Francisco"
+}
+-->
+
+*limitTo*
+
+[source,html]
+{{ San Francisco is very cloudy | limitTo:3 }}
+<!-- San -->
+{{ San Francisco is very cloudy | limitTo:-6 }}
+<!-- cloudy -->
+
+You can also create a custom filter function using the `.filter(name, fun)` function on a module
+
+== Controllers
+
+Controller is a function which adds other helpful functions to the `$scope` when the expression language is not enough

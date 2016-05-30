@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body ng-init="dChildren=0; dGod=0;">
+    <h2>Donate as much as you can</h2>
+    <div>
+        <label for="children">For children</label>
+        <input id="children" ng-model="dChildren" type="number" /> {{ dChildren | currency }}
+    </div>
+    <div>
+        <label for="god">For God</label>
+        <input id="god" ng-model="dGod" type="number" /> {{ dGod | currency }}
+    </div>
+
+    <button ng-click="dResult = true">Donate</button>
+    {{(dChildren + dGod)}}
+    <hr/>
+    <div ng-show="dResult && (dChildren + dGod) != 0">
+        <strong>Thanks! Your donation is: </strong> {{ dChildren + dGod | currency }}
+        <p>
+            13% (<strong>{{ (dChildren + dGod) * 0.13 | currency }}</strong>) will be given to the fond of homeless
+        </p>
+        <p>
+            3% (<strong>{{ (dChildren + dGod) * 0.03 | number:0 }} dollars</strong>) is your donation cashback!
+        </p>
+    </div>
+    <div ng-show="dResult && (dChildren + dGod) == 0">
+        <strong>Curse you, you have no heart! </strong>
+    </div>
+
+    <script src="../libs/angular.min.js"></script>
+</body>
+
+</html>
