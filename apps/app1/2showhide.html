@@ -2,15 +2,26 @@
 <html ng-app>
 
 <head>
-    <title>Document</title>
+    <title>Click, show hide example</title>
 </head>
 
 <body>
-    <h2>Click a button to get a kitten</h2>
-    <button ng-click="showKitten = true">Show</button>
-    <button ng-click="showKitten = false">Hide</button>
+    <button ng-click="showKitten = true">Show something wonderful</button>
+    <button ng-click="showKitten = false">Hide something wonderful</button>
     <br/>
+    <div ng-show="showKitten">
+      Wow that's amaizing! Lets give it a name
+      <button ng-click="kittenName = 'Roxy'; generated = true;">Generate name</button>
+      <br/>
+      <div ng-show="generated">
+        Here is your name: <input ng-model="kittenName" ng-copy="nameCopied = true" ng-cut="nameCutted = true"/>
+      </div>
+      <br/>
+      <span ng-show="nameCopied">You've copied a name</br></span>
+      <span ng-show="nameCutted">You've cutted a name</span>
+    </div>
     <img src="../libs/kitten.jpg" ng-show="showKitten" />
+
     <script src="../libs/angular.min.js"></script>
 </body>
 

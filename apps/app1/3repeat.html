@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app>
+
+<head>
+    <title>Repeat example</title>
+</head>
+
+<body ng-init="todos=[]">
+    <h2>Todo list</h2>
+    <input ng-model="todo">
+    <button ng-click="todos.push(todo);">Add todo</button>
+    <ul>
+      <li ng-repeat="t in todos">{{t}}</li>
+    </ul>
+    <script src="../libs/angular.min.js"></script>
+</body>
+
+</html>

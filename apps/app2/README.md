@@ -11,8 +11,35 @@ Controllers also could be nested into each other but this is not recommended as 
 
 Do **NOT** use controllers to:
 
-* Manipulate DOM — Controllers should contain only business logic. Putting any presentation logic into Controllers significantly affects its testability. Angular has databinding for most cases and directives to encapsulate manual DOM manipulation.
-* Format input — Use angular form controls instead.
-* Filter output — Use angular filters instead.
-* Share code or state across controllers — Use angular services instead.
+* Manipulate DOM - Controllers should contain only business logic. Putting any presentation logic into Controllers significantly affects its testability. Angular has databinding for most cases and directives to encapsulate manual DOM manipulation.
+* Format input - Use angular form controls instead.
+* Filter output - Use angular filters instead.
+* Share code or state across controllers - Use angular services instead.
 * Manage the life-cycle of other components (for example, to create service instances).
+
+Controller function adds functionality to the `$scope`
+
+## controller function
+1st argument of a `controller` function is it's `name`
+```
+app.controller('myCtrl', function($scope)) {
+  ...
+}
+```
+2nd argument of a controller is a function of controller itself or an array.
+
+As a function is can takes n arguments like `$scope`, `$http`, `myService` (custom service) in any order
+```
+function($scope, $http, myService) {
+  ...
+}
+```
+angular `$injector` will take care for you to understand what the passed arguments are
+
+Sometimes it's not possible, for example when js is being compiled (minified) and there is a way to teach angular what arguments are using a special array (the order of elements in array matters)
+```
+['$scope', '$http', 'myService', function($scope, $http, myService) {
+  ...
+}]
+```
+This is the **best-practice** way

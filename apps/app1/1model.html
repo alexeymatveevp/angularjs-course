@@ -2,16 +2,36 @@
 <html ng-app>
 
 <head>
-    <title>Document</title>
+    <title>Model example</title>
 </head>
 
 <body>
-    <h2>Your name:</h2>
-    <input ng-model="name" />
+    Your name:
+    <input ng-model="name" />{{ name }}
     <br/>
+    Sex:
+    <input type="checkbox" ng-model="sex"> {{ sex }}
     <br/>
-    <span>Hello, {{ name }}</span>
+    Favourite pet:
+    <select ng-model="pet">
+      <option value="1">cat</option>
+      <option value="2">dog</option>
+      <option value="3">snake</option>
+    </select>{{ pet }}
+    <br/>
+    It's photo:
+    <input type="file" ng-model="file"/> {{ file }}
+    <br/>
+    <a href="https://docs.angularjs.org/api/ng/directive/ngModel" target="_blank">ng-model doc</a>
     <script src="../libs/angular.min.js"></script>
+    <style media="screen">
+      /*.ng-touched {
+        border: 1px solid green;
+      }
+      .ng-dirty {
+        border: 1px solid red;
+      }*/
+    </style>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 // 2nd arg - dependencies - its mandatory even if there are no
 angular.module('app', []);
 // creates a controller in App2 module
-// 2nd argument is mandatory - without it it will not work
+// 2nd argument is a factory-function - without it it will not work
 angular.module('app').controller('ctrl', function($scope) {
 
     $scope.randomColor = function() {
