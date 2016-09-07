@@ -1,0 +1,12 @@
+- in JavaScript function context is defined while calling the function, not while defining it
+http://reactkungfu.com/2015/07/why-and-how-to-bind-methods-in-your-react-component-classes/
+- iife, like
+{(() => {
+        switch (this.state.color) {
+          case "red":   return "#FF0000";
+          case "green": return "#00FF00";
+          case "blue":  return "#0000FF";
+          default:      return "#FFFFFF";
+        }
+      })()}
+https://en.wikipedia.org/wiki/Immediately-invoked_function_expression

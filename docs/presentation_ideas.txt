@@ -1,0 +1,1 @@
+- let me ask you one question: what will be the result of the following code execution? javascript this function problems
