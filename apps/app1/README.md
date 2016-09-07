@@ -64,4 +64,6 @@ if `todos` list is `["Make a little step forward", "See what changed", "Commit o
   <li ng-repeat="t in todos" class="ng-binding ng-scope">Commit or reject</li>
 </ul>
 ```
+
+
 cautious reader can see the `class="ng-binding ng-scope"` was added here - `ng-scope` class is a hint for angular that a new `scope` is created here (each iterated element has a new scope) and `ng-binding` is also for angular internal use - it's a hint that some value is bound to this HTML element
