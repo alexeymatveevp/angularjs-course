@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+}
+.main {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: cornflowerblue;
+}
+.main > section {
+  display: flex;
+}
+.main > section > ul {
+  flex: 1;
+  border: 1px solid black;
+}
+.main > section > div {
+  flex: 5;
+}
+.panel {
+  border: 1px solid black;
+}
+.panel > header {
+  height: 30px;
+  padding: 10px;
+  background: cornflowerblue;
+}
+.panel > section {
+  height: 100%;
+  background: #fff;
+}
+.plugin-list {
+  width: 200px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.plugin-list > li {
+  height: 50px;
+  padding: 10px;
+  background: #ddd;
+  cursor: pointer;
+}
+.plugin-list > li:hover {
+  background: #eee
+}
+form > input.ng-touched.ng-invalid {
+  border: 1px solid red;
+}

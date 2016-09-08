@@ -1,0 +1,32 @@
+<div class="panel" ng-controller="UsmCtrl">
+  <header>User list</header>
+  <section>
+    <button ng-click="showAddUser = true">Add new user</button>
+    <form name="form" ng-show="showAddUser" novalidate>
+      <label for="name">Name</label>
+      <input type="text" name="name" ng-model="newUser.name" required>
+      <label for="email">Email</label>
+      <input type="text" name="email" ng-model="newUser.email">
+      <button ng-click="addUser()" ng-disabled="form.$invalid">Add</button>
+      <button ng-click="showAddUser = false">close</button>
+    </form>
+    <table>
+      <thead>
+        <th>User Name</th>
+        <th>email</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button ng-click="edit">Edit</button>
+            <button ng-click="deleteUser($index)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
