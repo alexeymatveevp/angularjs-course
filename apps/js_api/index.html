@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS build-in possibilities</title>
+</head>
+<body ng-controller="ctrl">
+  <table>
+    <thead>
+      <th style="width: 20%;">property</th>
+      <th>value</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>navigator.getBattery() </td>
+        <td>{{ battery }}</td>
+      </tr>
+      <tr>
+        <td>CSS.supports('-moz-columns', '100px 3')</td>
+        <td>{{cssSupports}}</td>
+      </tr>
+      <tr>
+        <td>CSS.supports('flex', 0)</td>
+        <td>{{cssSupports2}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="../libs/angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
