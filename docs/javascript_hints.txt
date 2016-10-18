@@ -10,3 +10,8 @@ http://reactkungfu.com/2015/07/why-and-how-to-bind-methods-in-your-react-compone
         }
       })()}
 https://en.wikipedia.org/wiki/Immediately-invoked_function_expression
+
+
+Monkey patching (or Duch punching) -  is a way for a program to extend or modify supporting system software locally
+https://en.wikipedia.org/wiki/Monkey_patch
+in javascript is widely used because the ease of patching

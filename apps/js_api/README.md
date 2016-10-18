@@ -22,6 +22,13 @@ document.addEventListener("load", function(event) {
 
 [docs](https://developer.mozilla.org/en-US/docs/Web/API/Document)
 
+## Other popular interfaces
+
+### Element
+`attributes`, `innerHTML` - to change contents, `id`, `className`
+
+###
+
 ## Cookies
 getting the cookie
 ```javascript
