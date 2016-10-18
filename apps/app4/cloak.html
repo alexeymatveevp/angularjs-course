@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloak example</title>
+</head>
+<body ng-app="app">
+<ul>
+    {{someLongLoadedValue}}
+    <li ng-repeat="p in list track by p.id">
+        <strong>{{p.id}}</strong> {{p.name}} {{p.date}}
+    </li>
+</ul>
+<script src="../libs/angular.min.js"></script>
+<script>
+    var app = angular.module('app', []);
+    var sc = angular.element('<script type="text/javascript" src="cloak.js"><\/script>')
+    document.head.appendChild(sc[0]);
+//            .appendTo(document.getElementsByTagName('body'));
+</script>
+</body>
+</html>
