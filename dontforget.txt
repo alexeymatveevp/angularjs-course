@@ -1,0 +1,31 @@
+delete and local vars
+
+conversion like true + true = 2 :)
+
+prototype object oriented possibility
+
+garbage collection
+own problems: implicit reference to prototype and its props
+now only M-a-S 
+possible memory leaks: https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/
+
+memory allocation 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management
+
+'use strict'
+since es5 - way of eliminating backward comp. if write 'use strict' in the start
+https://learn.javascript.ru/strict-mode
+
+
+probably v8 optimizations
+
+
+
+chrome memory profiling tools + method execution
+
+
+legacy alert/prompt/confirm
+
+
+eval() https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
+
