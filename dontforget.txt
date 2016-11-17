@@ -29,3 +29,4 @@ legacy alert/prompt/confirm
 
 eval() https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
 
+картошечка с пюрешкой слайд без смысла
