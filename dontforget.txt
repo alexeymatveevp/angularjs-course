@@ -30,3 +30,16 @@ legacy alert/prompt/confirm
 eval() https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
 
 картошечка с пюрешкой слайд без смысла
+
+
+es6 features
+http://es6-features.org/#BlockScopedVariables
+
+var/let/const hoisting (поднятие переменной)
+
+arrow functions and "this" lexical scope, but the problem is - you cannot override it even if you want
+https://derickbailey.com/2015/09/28/do-es6-arrow-functions-really-solve-this-in-javascript/
+
+varargs in es6 (rest parameters)
+computed property names
+
