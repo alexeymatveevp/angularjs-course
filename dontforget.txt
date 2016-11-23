@@ -58,3 +58,6 @@ https://nodejs.org/api/repl.html
 
 современные браузеры
 https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/
+
+es6 map, set
+research mozilla interfaces
