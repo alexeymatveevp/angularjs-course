@@ -10,10 +10,10 @@ prototype object oriented possibility
 
 garbage collection
 own problems: implicit reference to prototype and its props
-now only M-a-S 
+now only M-a-S
 possible memory leaks: https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/
 
-memory allocation 
+memory allocation
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management
 
 'use strict'
@@ -33,13 +33,13 @@ legacy alert/prompt/confirm
 
 eval() https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
 
-картошечка с пюрешкой слайд без смысла
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
 
 es6 features
 http://es6-features.org/#BlockScopedVariables
 
-var/let/const hoisting (поднятие переменной)
+var/let/const hoisting (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 
 arrow functions and "this" lexical scope, but the problem is - you cannot override it even if you want
 https://derickbailey.com/2015/09/28/do-es6-arrow-functions-really-solve-this-in-javascript/
@@ -48,7 +48,7 @@ varargs in es6 (rest parameters)
 computed property names
 
 
-art of node - 
+art of node -
 https://github.com/maxogden/art-of-node
 
 node repl
@@ -56,8 +56,12 @@ https://www.tutorialspoint.com/nodejs/nodejs_repl_terminal.htm
 https://nodejs.org/api/repl.html
 
 
-современные браузеры
+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/
 
 es6 map, set
 research mozilla interfaces
+
+
+Currying in 5 min + Partial Application
+http://slides.com/gsklee/functional-programming-in-5-minutes
