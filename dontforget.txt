@@ -1,4 +1,4 @@
-colors:
+﻿colors:
 bg: 236 239 241
 
 
@@ -65,3 +65,6 @@ research mozilla interfaces
 
 Currying in 5 min + Partial Application
 http://slides.com/gsklee/functional-programming-in-5-minutes
+
+# ng1 vs ng2
+https://angular.io/docs/ts/latest/cookbook/a1-a2-quick-reference.html
