@@ -1,0 +1,6 @@
+# compile, controller and link fn
+http://stackoverflow.com/questions/15676614/angularjs-link-vs-compile-vs-controller
+http://stackoverflow.com/questions/20018507/angularjs-what-is-the-need-of-the-directives-link-function-when-we-already-had
+? directive to directive communication
+http://stackoverflow.com/questions/15676614/angularjs-link-vs-compile-vs-controller
+// Best Practice: use controller when you want to expose an API to other directives. Otherwise use link.

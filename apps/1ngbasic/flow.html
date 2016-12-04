@@ -1,0 +1,135 @@
+<html ng-app="app" ng-cloak>
+<head>
+    <script src="../libs/angular.min.js"></script>
+    <script src="flow.js"></script>
+</head>
+<body ng-controller="ctrl as ct">
+
+<div class="panel">
+    <h4>Expressions</h4>
+    <input ng-model="expression">
+    <button ng-click="evaluated = $root.$eval(expression)">$eval</button>
+    <code>{{evaluated}}</code>
+</div>
+
+<!--<div class="panel" ng-show="buyMode">-->
+    <!--<h4>Shopping cart</h4>-->
+    <!--<p>Congratulations! You have bought {{ boughtPet.name }} </p>-->
+<!--</div>-->
+
+<div class="panel" ng-init="sort = 'id'; reverse = true;">
+    <h4>Pets list</h4>
+    <div>
+        <button ng-click="sortBy('id')">id</button>
+        <span class="sort" ng-class="{'reverse': reverse}" ng-show="sort === 'id'"></span>
+        <button ng-click="sortBy('name')">name</button>
+        <span class="sort" ng-class="{'reverse': reverse}" ng-show="sort === 'name'"></span>
+        <button ng-click="sortBy('type')">type</button>
+        <span class="sort" ng-class="{'reverse': reverse}" ng-show="sort === 'type'"></span>
+        sort: {{sort}} reverse: {{reverse}}
+        <br>
+        search: <input ng-model="searchQuery">
+    </div>
+    <ul style="list-style: none">
+        <li ng-repeat="pet in pets | orderBy:sort:reverse | filter:searchQuery" class="card">
+            <p>{{pet.name}}</p>
+            <img ng-src="../libs/{{pet.type}}.jpg"/>
+            <br/>
+            <input ng-model="pet.type" ng-model-options="{debounce: 500}">
+            <button ng-click="savePet(pet)">Save</button>
+            <button ng-click="deletePet(pet)">X</button>
+            <!--<button ng-click="buyPet(pet); buyMode = true;">Buy</button>-->
+        </li>
+    </ul>
+</div>
+
+<div class="panel">
+    <h4>First example</h4>
+    <label for="sas">Show animal selector</label>
+    <input id="sas" type="checkbox" ng-model="showAnimalSelector">
+
+    <div ng-show="showAnimalSelector">
+        <input ng-model="animal">
+        <select ng-model="animal">
+            <option value="cat">I'm cat</option>
+            <option value="dog">I'm dog</option>
+            <option value="walrus">Walrus</option>
+        </select>
+    </div>
+</div>
+
+<div class="panel">
+    <h4>Animal click show</h4>
+    <div>
+        <button ng-click="showAnimal = true;">Show animal</button>
+        <button ng-click="showAnimal = false;">Hide animal</button>
+        <div ng-show="showAnimal">
+            <p>Wow what a beauty! Lets give it a name</p>
+            <input ng-model="animalName">
+            <span ng-bind="animalName"></span>
+            <button ng-click="addPet(animalName, animal)">Add</button>
+        </div>
+    </div>
+    <img ng-src="../libs/{{animal}}.jpg" ng-show="showAnimal" height="200px"/>
+</div>
+
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+    .panel {
+        background: #f8f6fb;
+        border: 1px dashed #bbbbb7;
+        margin: 10px;
+    }
+    .panel > h4 {
+        margin: 0;
+        color: white;
+        text-align: center;
+        background: #585759;
+    }
+    .card {
+        display: inline-block;
+        margin: 5px;
+        padding: 5px;
+    }
+    .card > img {
+        max-height: 200px;
+        max-width: 200px;
+    }
+    .sort:after {
+        content: '\25b2';
+    }
+    .sort.reverse:after {
+        content: '\25bc';
+    }
+</style>
+
+
+
+<!-- ng-app and simple {{1+3}} -->
+<!-- input with ng-model -->
+<!-- untouched/touched pristine/dirty empty/not-empty valid/not-valid -->
+<!-- select animal example -->
+<!-- ng cloak -->
+<!-- panel refactoring -->
+<!-- ng click show kitten -->
+<!-- cat, dog, walrus + ng-src -->
+<!-- animalName and ng-bind as {{}} -->
+<!-- angular module, no module error in console link -->
+<!-- scope-->
+<!-- scope.$parent == scope.$parent.$root - root scope -->
+<!-- pets repeat / even, odd, index, first, last, middle, ...-->
+<!-- add delete pet locally -->
+<!-- save update pet server -->
+<!-- repeat track by tracking fn-->
+<!-- filter, search, 'alse' problem -->
+<!-- ngModelOptions debounce-->
+<!-- -->
+<!-- ctrl as ct creates a new ct variable in scope -->
+<!-- -->
+<!-- converter example from prev integrated in controller -->
+<!-- -->
+<!-- -->
+</body>
+</html>

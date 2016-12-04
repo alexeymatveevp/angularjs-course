@@ -1,0 +1,76 @@
+<html ng-app="app" ng-cloak>
+<head>
+    <script src="../libs/angular.min.js"></script>
+    <script src="flow.js"></script>
+</head>
+<body ng-controller="ctrl as ct">
+{{data}}
+<input ng-model="data.tool">
+<div class="panel">
+    <h4>First example</h4>
+    <label for="sas">Show animal selector</label>
+    <input id="sas" type="checkbox" ng-model="showAnimalSelector">
+
+    <div ng-show="showAnimalSelector">
+        <input ng-model="animal">
+        <select ng-model="animal">
+            <option value="kitten">I'm kitten</option>
+            <option value="dog">I'm dog</option>
+            <option value="walrus">Walrus</option>
+        </select>
+    </div>
+</div>
+
+<div class="panel">
+    <h4>Animal click show</h4>
+    <div>
+        <button ng-click="showAnimal = true;">Show animal</button>
+        <button ng-click="showAnimal = false;">Hide animal</button>
+        <div ng-show="showAnimal">
+            <p>Wow what a beauty! Lets give it a name</p>
+            <input ng-model="animalName">
+            <span ng-bind="animalName"></span>
+        </div>
+    </div>
+    <img ng-src="../libs/{{animal}}.jpg" ng-show="showAnimal" height="200px"/>
+</div>
+
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+    .panel {
+        background: #f8f6fb;
+        border: 1px dashed #bbbbb7;
+        margin: 10px;
+    }
+    .panel > h4 {
+        margin: 0;
+        color: white;
+        text-align: center;
+        background: #585759;
+    }
+</style>
+
+
+
+<!-- ng-app and simple {{1+3}} -->
+<!-- input with ng-model -->
+<!-- untouched/touched pristine/dirty empty/not-empty valid/not-valid -->
+<!-- select animal example -->
+<!-- ng cloak -->
+<!-- panel refactoring -->
+<!-- ng click show kitten -->
+<!-- cat, dog, walrus + ng-src -->
+<!-- animalName and ng-bind as {{}} -->
+<!-- angular module, no module error in console link -->
+<!-- scope-->
+<!-- scope.$parent == scope.$parent.$root - root scope -->
+<!-- -->
+<!-- ctrl as ct creates a new ct variable in scope -->
+<!-- -->
+<!-- converter example from prev integrated in controller -->
+<!-- -->
+<!-- -->
+</body>
+</html>

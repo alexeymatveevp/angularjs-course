@@ -1,0 +1,3 @@
+kebab-case important in directives (PascalCase, camelCase, snake_case)
+scope is like a glue between model and view
+Model View Whatever

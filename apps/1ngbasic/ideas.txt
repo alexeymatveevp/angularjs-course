@@ -1,0 +1,12 @@
+# ng created in 2009 by Misko Hevery and Adam Abrons
+# ng first reads HTML, which uses tags and attributed, those special for ng tags are called directives
+# declarative programming - for view, imperative - for business logic
+# decouple dom from application logic (depends of code structuring)
+# always need to think what parts of code are for UI and what - for server (thin line)
+# because ng2 has components and this instead of controller - better to show ng1 as component based
+
+# repeat will keep track of array - to optimize rerender, track-by
+duplicate add 2 same objects, $id(obj)
+
+
+# in conclusion - about framework in general

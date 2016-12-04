@@ -1,0 +1,24 @@
+<html ng-app ng-cloak>
+<body>
+
+<label for="sas">Show animal selector</label>
+<input id="sas" type="checkbox" ng-model="showAnimalSelector">
+
+<div ng-show="showAnimalSelector">
+    <input ng-model="animal">
+    <select ng-model="animal">
+        <option value="cat">I'm cat</option>
+        <option value="dog">I'm dog</option>
+        <option value="walrus">Walrus</option>
+    </select>
+</div>
+
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+</style>
+
+<script src="../libs/angular.min.js"></script>
+</body>
+</html>

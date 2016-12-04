@@ -1,0 +1,6 @@
+# directive and component comparison table
+https://docs.angularjs.org/guide/component
+# dont modify $scope everywhere, the need of isolated scope
+Components should never modify any data or DOM that is out of their own scope. Normally, in Angular it is possible to modify data anywhere in the application through scope inheritance and watches. This is practical, but can also lead to problems when it is not clear which part of the application is responsible for modifying the data. That is why component directives use an isolate scope, so a whole class of scope manipulation is not possible.
+# $watch Depths
+https://docs.angularjs.org/guide/scope
