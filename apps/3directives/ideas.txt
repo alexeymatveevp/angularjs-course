@@ -1,0 +1,2 @@
+# jira-like edit fields
+lots lots ideas here https://docs.angularjs.org/guide/compiler

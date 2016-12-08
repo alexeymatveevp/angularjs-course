@@ -1,0 +1,5 @@
+# browserify, requirejs
+# commonjs and amd dead
+https://www.reddit.com/r/javascript/comments/3vqgai/eli5_commonjs_vs_amd_vs_es6/
+
+# protractor, karma, jasmine
