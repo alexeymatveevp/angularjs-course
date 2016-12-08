@@ -1,0 +1,68 @@
+thanks for feedback
+presentation and showcase should be combined
+questions: sessions / error handling / angular modules where to find? /
+
+module also returns the module back so it could be useful to get the module by name
+
+the root scope, scope hierarchy / slides + batarang
+
+ctrl as ct, use either this or $scope, this is more cleaner
+var vm = this; return vm;  (optional)
+
+https://docs.angularjs.org/api/ng/type/$rootScope.Scope
+
+angular creates it's own event loop which is called $digest cycle
+dirty checking (example with ng-model classes), better then change-listeners model with subscribers, observables
+all dirty checking is done in 1 transaction
+knockout and backbone - dependency tracking if some property depends on other one
+
+what if we wanted to write our own angular?
+1. parse DOM, find, process and remember directives, expressions
+2. put listeners to ng-model
+3. each time input updates - check the prev.state of expressions (templates) and update DOM
+
+$$watchers list, last expr, dirty checking
+var destroy watcher  = $watch(watchExpression, listener, [objectEquality]);
+objectEquality parameter with custom watchExpression fn
+
+re-run of watchers only if there are dirty, max re-run is 10
+$scope.$destroy() and that watchers are eliminated
+$new() to create new scope (useful in tests)
+
+show maximum $scope.data.www modify cycles
+
+$eval example with evaluate and evaluated.. fix error with other data not synchronized with $watchGroup
+
+data.www | json filter
+
+usage of $apply, timeout.html
+$apply already in progress - if try to invoke $digest in controller
+function $apply(expr) {
+  try {
+    return $eval(expr);
+  } catch (e) {
+    $exceptionHandler(e);
+  } finally {
+    $root.$digest();
+  }
+}
+
+broadcast.html, $on, $emit, $broadcast
+ng if example (creates new scope on checkbox click) but the controller ct.q remains the same for both scopes
+event propagation slide: every $digest will propagate to children
+
+
+$injector - only 1 per application
+var injector = angular.element(document.body).injector()
+usually js is minified and the controller argument names are lost for $injector, for this situation the array ['a', fn(a)] is used
+bootstrap app manually angular.bootstrap(document)
+
+all services and factories are singleton
+services are constructor fn, can use es6 classes and also return {}
+factory can only return
+http://blog.thoughtram.io/angular/2015/07/07/service-vs-factory-once-and-for-all.html
+
+angular extend
+
+
+

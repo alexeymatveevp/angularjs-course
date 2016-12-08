@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../libs/angular.min.js"></script>
+    <script src="scope.js"></script>
+</head>
+<body ng-controller="ctrl as ct">
+<span>{{1+2}}</span>
+<p>{{asdf}}</p>
+<br>
+some data.www<input ng-model="ct.data.www">
+<pre>{{ct.data | json}}</pre>
+<input ng-model="asdf">
+<br>
+evaluate: <input ng-model="ct.evaluate" ng-model-options="{debounce: 300}">
+<br>
+result: <span>{{ct.evaluated}}</span>
+<br><br>
+<button ng-click="ct.click()">log watchers</button>
+<button ng-click="ct.click2()">init data</button>
+<button ng-click="ct.destroyWatcher()">destroy watcher</button>
+</body>
+</html>

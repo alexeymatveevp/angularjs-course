@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../libs/angular.min.js"></script>
+    <script src="broadcast.js"></script>
+</head>
+<body ng-controller="ctrl as ct">
+scopeId: {{$id}}
+<input ng-model="q">
+<button ng-click="printScope()">print scope</button>
+<button ng-click="registerListeners()">register listeners</button>
+<button ng-click="emit(emitVal)">emit</button>
+<input ng-model="emitVal">
+<button ng-click="broadcast(broadcastVal)">broadcast</button>
+<input ng-model="broadcastVal">
+<br>
+show1: <input type="checkbox" ng-model="showDiv">
+<div ng-if="showDiv" style="margin: 0 0 0 20px">
+    scopeId: {{$id}}
+    <input ng-model="q">
+    <button ng-click="printScope()">print scope</button>
+    <button ng-click="registerListeners()">register listeners</button>
+    <button ng-click="emit(emitVal)">emit</button>
+    <input ng-model="emitVal">
+    <button ng-click="broadcast(broadcastVal)">broadcast</button>
+    <input ng-model="broadcastVal">
+    <br>
+    show2: <input type="checkbox" ng-model="showDiv2">
+    <div ng-if="showDiv2" style="margin: 0 0 0 40px">
+        scopeId: {{$id}}
+        <input ng-model="q">
+        <button ng-click="printScope()">print scope</button>
+        <button ng-click="registerListeners()">register listeners</button>
+        <button ng-click="emit(emitVal)">emit</button>
+        <input ng-model="emitVal">
+        <button ng-click="broadcast(broadcastVal)">broadcast</button>
+        <input ng-model="broadcastVal">
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,3 +1,4 @@
+var angular = require('angular');
 var App = angular.module('app', []);
 App.controller('ctrl', function($scope, $http, PetService) {
     $scope.animal = 'dog';
