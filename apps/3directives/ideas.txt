@@ -1,4 +1,16 @@
+# previous
+angular.bootstrap(document.body, ['app']);
+works with DOM not strings
+!once again about lifecycle
+
+dirty state (prev value) is stored in watcher - show it
+dirty checking as in gradle input-output
+
 # jira-like edit fields
 lots lots ideas here https://docs.angularjs.org/guide/compiler
+
+# input is a directive
+
+kebab-case
 
 components (in 1.5) and directives difference

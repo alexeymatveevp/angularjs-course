@@ -25,4 +25,4 @@ App.factory('PiService', function() {
     }
 });
 
-// angular.bootstrap(document)
+angular.bootstrap(document.body, ['app']);
