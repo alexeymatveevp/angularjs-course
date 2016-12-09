@@ -9,8 +9,10 @@ App.controller('ctrl', function($scope, $rootScope) {
     };
     // var newScope = $rootScope.$new();
     // newScope.qqq = 'qqq';
+    $scope.counter = 0;
     var destroyWatcher = $scope.$watch('ct.data.www', function(val, old, c) {
         console.log('old: ' + old + ' new: ' + val);
+        $scope.counter = $scope.counter + 1;
         // if ($scope.data) {
         //     $scope.data.www = $scope.data.www+1;
         // }
@@ -20,9 +22,6 @@ App.controller('ctrl', function($scope, $rootScope) {
         me.data = {
             www: 'wwww'
         };
-        console.log('digest started finished');
-        $scope.$digest();
-        console.log('digest finished');
     };
 
     this.destroyWatcher = function() {

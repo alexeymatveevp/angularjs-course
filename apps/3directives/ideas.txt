@@ -1,2 +1,4 @@
 # jira-like edit fields
 lots lots ideas here https://docs.angularjs.org/guide/compiler
+
+components (in 1.5) and directives difference
