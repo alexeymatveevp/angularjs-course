@@ -10,13 +10,14 @@ service/SomeService.js
 the root scope, scope hierarchy / slides + batarang
 
 ctrl as ct, use either this or $scope, this is more cleaner
+also with es6 classes
 var vm = this; return vm;  (optional)
 
 https://docs.angularjs.org/api/ng/type/$rootScope.Scope
 
 all services and factories are singleton
 services are constructor fn, can use es6 classes and also return {}
-factory can only return
+factory can only return object as API
 http://blog.thoughtram.io/angular/2015/07/07/service-vs-factory-once-and-for-all.html
 
 angular extend
