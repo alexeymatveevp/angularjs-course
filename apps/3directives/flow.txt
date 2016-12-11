@@ -1,0 +1,6 @@
+# directives
+there was a time when documentation was really bad now it's ok
+https://docs.angularjs.org/guide/directive
+
+directives can be used for:
+- templating

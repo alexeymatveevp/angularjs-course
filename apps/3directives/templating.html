@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <script src="../libs/angular.min.js"></script>
+    <script src="templating.js"></script>
+    <script src="directives/directives.module.js"></script>
+    <script src="directives/brick-wall.js"></script>
+    <script src="directives/color.js"></script>
+</head>
+<body>
+<ul>
+    <li ng-repeat="name in ['Wally','Vasya', 'Masha', 'Aspan']">
+        <brick-wall></brick-wall>
+    </li>
+</ul>
+<style>
+    brick-wall {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background: url("../libs/brick-wall.jpg")
+    }
+</style>
+</body>
+</html>

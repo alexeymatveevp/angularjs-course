@@ -14,3 +14,6 @@ lots lots ideas here https://docs.angularjs.org/guide/compiler
 kebab-case
 
 components (in 1.5) and directives difference
+
+# watch and observe
+http://stackoverflow.com/questions/14876112/angularjs-difference-between-the-observe-and-watch-methods
