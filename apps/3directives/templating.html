@@ -6,20 +6,28 @@
     <script src="directives/directives.module.js"></script>
     <script src="directives/brick-wall.js"></script>
     <script src="directives/color.js"></script>
+    <script src="directives/trace.js"></script>
+    <!--<script src="directives/p.js"></script>-->
+    <!--<script src="directives/div.js"></script>-->
 </head>
 <body>
-<ul>
+<ul style="list-style:none;">
     <li ng-repeat="name in ['Wally','Vasya', 'Masha', 'Aspan']">
+        <input ng-model="name">
         <brick-wall></brick-wall>
     </li>
 </ul>
+<p color="00eeff">Hi im red</p>
+<div trace>
+    Tracing div
+</div>
 <style>
-    brick-wall {
-        display: inline-block;
-        width: 200px;
-        height: 200px;
-        background: url("../libs/brick-wall.jpg")
-    }
+    /*brick-wall {*/
+        /*display: inline-block;*/
+        /*width: 200px;*/
+        /*height: 200px;*/
+        /*background: url("../libs/brick-wall.jpg")*/
+    /*}*/
 </style>
 </body>
 </html>

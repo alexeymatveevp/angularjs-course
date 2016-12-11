@@ -17,3 +17,6 @@ components (in 1.5) and directives difference
 
 # watch and observe
 http://stackoverflow.com/questions/14876112/angularjs-difference-between-the-observe-and-watch-methods
+
+# compile, link pre post, template
+http://triangular.io/blog/directive-compilation-in-angularjs-step-by-step/

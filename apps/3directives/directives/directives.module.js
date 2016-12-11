@@ -1,1 +1,1 @@
-var App = angular.module('myDirectives', []);
+angular.module('myDirectives', []);

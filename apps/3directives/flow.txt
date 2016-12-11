@@ -2,5 +2,16 @@
 there was a time when documentation was really bad now it's ok
 https://docs.angularjs.org/guide/directive
 
+
 directives can be used for:
 - templating
+
+
+# compile link
+compile phase is to compile template; on this phase it's possible to modify the template
+controller is invoked right before linking to set the scope variables
+link phase it used to link template elements with some javascript code
+$digest cycle is still in progress in link phase
+
+each directive has priority of execution in case when multiple directives are on the same element
+scope: false - directive uses parent scope; true -
