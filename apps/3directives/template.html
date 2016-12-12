@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <script src="../libs/angular.min.js"></script>
+    <script src="template.js"></script>
+</head>
+<body ng-controller="ctrl">
+<span>{{name}}</span>
+<input ng-model="name">
+<form>
+    <my-parent>
+        <h3>Parent property: {{ ct.parentProperty }}</h3>
+        <my-directive ng-model="asdf" parent-property="ct.parentProperty" name="name" provide-data-fn="consumeData(data)"></my-directive>
+    </my-parent>
+</form>
+</body>
+</html>

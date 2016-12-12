@@ -1,0 +1,9 @@
+<div>
+    <h4>{{ name }}</h4>
+    <input ng-model="name">
+    <p>Hello I'm a directive content</p>
+    <button ng-click="provideData({data: 'awefwef'})">provide data</button>
+    <span>{{ct.controllerName}}</span>
+    <p>parent property in child: <input ng-model="ct.parentProperty"></p>
+    <p>parent property in scope child: <input ng-model="parentProperty"></p>
+</div>

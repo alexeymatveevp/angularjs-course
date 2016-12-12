@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <script src="../libs/angular.min.js"></script>
+    <script src="tabs.js"></script>
+    <script src="directives/directives.module.js"></script>
+    <script src="directives/tab.js"></script>
+</head>
+<body>
+<my-tabs>
+    <my-pane title="Hello">
+        <p>Lorem ipsum dolor sit amet</p>
+    </my-pane>
+    <my-pane title="World">
+        <em>Mauris elementum elementum enim at suscipit.</em>
+        <p><a href ng-click="i = i + 1">counter: {{i || 0}}</a></p>
+    </my-pane>
+</my-tabs>
+</body>
+</html>

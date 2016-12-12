@@ -2,12 +2,11 @@
 <html ng-app="app">
 <head>
     <script src="../libs/angular.min.js"></script>
-    <script src="flow.js"></script>
+    <script src="template.js"></script>
 </head>
-<body>
-<input ng-model="q">
-<input ng-model="w">
-<div class="{{w}}"></div>
-<p draggable asdf="q">Im draggable</p>
+<body ng-controller="ctrl">
+<span>{{name}}</span>
+<input ng-model="name">
+<my-directive name="name" provide-data-fn="consumeData(data)"></my-directive>
 </body>
 </html>

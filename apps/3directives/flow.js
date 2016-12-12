@@ -1,19 +1,25 @@
 var App = angular.module('app', []);
 App.controller('ctrl', function($scope) {
-    $scope.$observe('w', function(val, old) {
-        console.log(val + ' ' + old);
-    })
-});
-App.directive('draggable', function() {
-    function link(scope, element, attrs) {
-        scope.$watch('asdf', function(val,old) {
-            console.log(val + " " + old)
-        })
+    $scope.name = 'Some name';
+    console.log($scope);
+    $scope.consumeData = function(data) {
+        console.log('data recieved: ' + data);
     }
+});
+App.directive('myDirective', function() {
     return {
-        link: link,
+        restrict: 'ECMA',
+        templateUrl: 'myDirective.html',
         scope: {
-            asdf:  '='
-        }
+            name: '<',
+            provideData: '&provideDataFn'
+        },
+        // scope: true,
+        controller: function($scope) {
+            // $scope.name = "I'm isolated";
+            console.log($scope);
+            this.controllerName = 'im ct.controllerName';
+        },
+        controllerAs: 'ct'
     }
 });

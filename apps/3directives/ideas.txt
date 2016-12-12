@@ -20,3 +20,10 @@ http://stackoverflow.com/questions/14876112/angularjs-difference-between-the-obs
 
 # compile, link pre post, template
 http://triangular.io/blog/directive-compilation-in-angularjs-step-by-step/
+compile used for template DOM manipulation
+link is for modifying dom, controller is for modifying state/scope
+controller is used for exposing API, link can access controller via require
+link is used for registring callbacks, $watch fns
+controller is used when other directive needs to interact with this directive
+manipulations with scope can be done in link or controller but better in ctrl for consistency reasons
+http://stackoverflow.com/questions/12546945/difference-between-the-controller-link-and-compile-functions-when-definin
