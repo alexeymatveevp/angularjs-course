@@ -15,7 +15,6 @@ angular.module('app').controller('ctrl', function($scope, UnicornService) {
     };
     $scope.$watch('ct.data.www', function(val, old) {
         console.log(val)
-
         console.log(old)
     })
 
@@ -24,7 +23,7 @@ angular.module('app').controller('ctrl', function($scope, UnicornService) {
 
     $scope.$watchGroup(['ct.toEvaluate', 'ct.data.www'], function(val) {
         vm.evaluated = $scope.$eval(val[0]);
-        vm.data.www = vm.data.www+"a";
+        // vm.data.www = vm.data.www+"a";
     })
 });
 

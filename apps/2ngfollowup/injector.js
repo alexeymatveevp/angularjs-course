@@ -7,7 +7,7 @@ App.controller('ctrl', function($scope, $injector) {
         var PiService = $injector.get('PiService');
         this.pi = PiService.pi;
         this.picalc = PiService.calcPi();
-    }
+    };
     // angular.extend(this, {
     //     pi: 4.115
     // })

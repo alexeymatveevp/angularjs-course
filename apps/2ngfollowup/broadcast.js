@@ -7,13 +7,13 @@ App.controller('ctrl', function($scope) {
     $scope.registerListeners = function() {
         this.$on('q', function(event, args) {
             console.log('q catched! in scope ' + event.currentScope.$id);
-            console.log(event);
-            console.log(args);
+            // console.log(event);
+            // console.log(args);
         });
         this.$on('w', function(event, args) {
             console.log('w is here!');
-            console.log(event);
-            console.log(args);
+            // console.log(event);
+            // console.log(args);
         })
     };
     $scope.emit = function(val) {

@@ -1,6 +1,7 @@
 <html ng-app="app">
 <head>
-    <script src="../libs/angular.min.js"></script>
+    <!--<script src="../libs/angular.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
     <script src="flow.js"></script>
     <script src="services/UnicornService.js"></script>
 </head>
@@ -15,6 +16,8 @@
 evaluate: <input ng-model="ct.toEvaluate" ng-model-options="{debounce: 500}">
 <br>
 evaluated: {{ ct.evaluated }}
+<br>
+<button ng-click="ct.click()">log scope</button>
 <!-- -->
 <!-- -->
 <!-- -->

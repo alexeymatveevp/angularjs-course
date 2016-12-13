@@ -27,7 +27,8 @@ App.directive('myDirective', function() {
             var parentCtrl = controllers[0];
             scope.ct.parentProperty = parentCtrl.parentProperty;
         },
-        controllerAs: 'ct'
+        controllerAs: 'ct',
+        bindToController: true
     }
 });
 App.directive('myParent', function() {

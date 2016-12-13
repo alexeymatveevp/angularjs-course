@@ -11,7 +11,6 @@
 </head>
 <body ng-controller="ctrl as ct">
 scopeId: {{$id}}
-<input ng-model="q">
 <button ng-click="printScope()">print scope</button>
 <button ng-click="registerListeners()">register listeners</button>
 <button ng-click="emit(emitVal)">emit</button>
@@ -22,7 +21,6 @@ scopeId: {{$id}}
 show1: <input type="checkbox" ng-model="showDiv">
 <div ng-if="showDiv" style="margin: 0 0 0 20px">
     scopeId: {{$id}}
-    <input ng-model="q">
     <button ng-click="printScope()">print scope</button>
     <button ng-click="registerListeners()">register listeners</button>
     <button ng-click="emit(emitVal)">emit</button>
@@ -33,7 +31,6 @@ show1: <input type="checkbox" ng-model="showDiv">
     show2: <input type="checkbox" ng-model="showDiv2">
     <div ng-if="showDiv2" style="margin: 0 0 0 40px">
         scopeId: {{$id}}
-        <input ng-model="q">
         <button ng-click="printScope()">print scope</button>
         <button ng-click="registerListeners()">register listeners</button>
         <button ng-click="emit(emitVal)">emit</button>
