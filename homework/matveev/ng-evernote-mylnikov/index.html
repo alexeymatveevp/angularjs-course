@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title >Evernote by mylnikov v0.1</title>
+
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+
+
+</head>
+<body ng-controller="main">
+    <h1 style=" text-align: center">Evernote by mylnikov </h1>
+
+    <div style="text-align: center; width:100%;" class="ui input">
+        <input  style="width: 100%" class="ui input" type="text" placeholder="Enter value of note or notebook"  ng-model="inputValue" />
+    </div>
+
+    <div style="text-align: center;margin-top: 14px">
+        <button class="ui button" ng-click="addNewNote()">Add new note</button>
+        <button class="ui button" ng-click="addNewNotebook()">Add new notebook</button>
+    </div>
+
+    <div ng-repeat="notebook in notebooks track by $index" style="">
+        <div>{{notebook}}</div>
+    </div>
+
+    <script src="../../../apps/libs/angular.min.js"></script>
+    <script src="evernote-app.js"></script>
+</body>
+</html>
