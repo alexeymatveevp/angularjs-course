@@ -1,13 +1,16 @@
 {
   "name": "angularjs-course",
   "version": "1.0.0",
-  "description": "",
-  "main": "test.js",
+  "description": "The AngularJS series of lections: presentation slides and examples",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start",
+    "b1": "browserify apps/1ngbasic/flow.js > apps/1ngbasic/bundle.js",
+    "w1": "watchify apps/1ngbasic/flow.js -o apps/1ngbasic/bundle.js",
+    "b1min": "browserify -g uglifyify apps/1ngbasic/flow.js -o apps/1ngbasic/bundle.js",
+    "server": "http-server"
   },
   "repository": {
     "type": "git",
@@ -20,9 +23,27 @@
   },
   "homepage": "https://github.com/davidluckystar/angularjs-course#readme",
   "devDependencies": {
-    "babel-preset-es2015": "^6.18.0"
+    "angular-mocks": "^1.6.0",
+    "babel-preset-es2015": "^6.18.0",
+    "browserify": ">=13.x",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "protractor": "^4.0.13",
+    "uglifyify": "^3.0.4",
+    "watchify": "^3.8.0",
+    "webdriver-manager": "^10.2.10"
   },
   "dependencies": {
-    "angular": "^1.5.9"
+    "angular": "^1.5.9",
+    "@angular/common": "~2.3.0",
+    "@angular/compiler": "~2.3.0",
+    "@angular/core": "~2.3.0",
+    "@angular/forms": "~2.3.0",
+    "@angular/http": "~2.3.0",
+    "@angular/platform-browser": "~2.3.0",
+    "@angular/platform-browser-dynamic": "~2.3.0",
+    "@angular/router": "~3.3.0"
   }
 }
