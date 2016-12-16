@@ -15,4 +15,16 @@ describe('PetShop application test suite', function() {
         expect(scope.animal).toBe('dog');
     });
 
+    it("should buy a pet with some price", function() {
+        var pet = {
+            id: 13,
+            name: "Bobby",
+            type: "dog"
+        };
+        scope.buyPet(pet);
+        expect(scope.boughtPet).not.toBe(undefined);
+        expect(scope.boughtPet.name).toBe("Bobby");
+        expect(scope.boughtPet.price).not.toBe(undefined);
+    });
+
 });

@@ -1,4 +1,4 @@
-module.exports = function PetService($http, $q) {
+module.exports = ['$http', '$q', function PetService($http, $q) {
     return {
         addPet: function(name, type) {
             var deferred = $q.defer();
@@ -11,4 +11,4 @@ module.exports = function PetService($http, $q) {
             return $http.put('http://localhost:8080/pet/' + pet.id + '?name=' + pet.name + '&type=' + pet.type)
         }
     };
-}
+}]

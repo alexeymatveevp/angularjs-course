@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports = function($scope, $http, PetService) {
+module.exports = ['$scope', '$http', 'PetService', function($scope, $http, PetService) {
     $scope.animal = 'dog';
     $scope.data = {
         tool: 'apix',
@@ -80,7 +80,7 @@ module.exports = function($scope, $http, PetService) {
             $scope.reverse = false;
         }
     }
-};
+}];
 
 
 },{}],2:[function(require,module,exports){
@@ -95,7 +95,7 @@ angular.module('app', ['services', 'controllers']);
 require('./services/module.js');
 require('./controllers/module.js');
 },{"./controllers/module.js":2,"./services/module.js":5,"angular":7}],4:[function(require,module,exports){
-module.exports = function PetService($http, $q) {
+module.exports = ['$http', '$q', function PetService($http, $q) {
     return {
         addPet: function(name, type) {
             var deferred = $q.defer();
@@ -108,7 +108,7 @@ module.exports = function PetService($http, $q) {
             return $http.put('http://localhost:8080/pet/' + pet.id + '?name=' + pet.name + '&type=' + pet.type)
         }
     };
-}
+}]
 },{}],5:[function(require,module,exports){
 var angular = require('angular');
 module.exports = angular.module('services', [])

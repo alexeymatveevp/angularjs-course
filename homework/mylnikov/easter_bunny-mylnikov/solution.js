@@ -1,7 +1,7 @@
 /**
  * Created by amylniko on 15.12.2016.
  */
-$(document).ready(function () {
+//$(document).ready(function () {
     var directions = [[0,1],[1,0],[0,-1],[-1,0]];
     var completedCells = [{x:0,y:0}];
     var currentDirection = 0;
@@ -44,4 +44,4 @@ $(document).ready(function () {
     })
     console.log(curX);
     console.log(curY);
-})
+//})

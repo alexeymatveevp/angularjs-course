@@ -1,4 +1,4 @@
-module.exports = function($scope, $http, PetService) {
+module.exports = ['$scope', '$http', 'PetService', function($scope, $http, PetService) {
     $scope.animal = 'dog';
     $scope.data = {
         tool: 'apix',
@@ -79,5 +79,5 @@ module.exports = function($scope, $http, PetService) {
             $scope.reverse = false;
         }
     }
-};
+}];
 
