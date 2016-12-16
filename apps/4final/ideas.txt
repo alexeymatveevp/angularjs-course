@@ -2,4 +2,30 @@
 # commonjs and amd dead
 https://www.reddit.com/r/javascript/comments/3vqgai/eli5_commonjs_vs_amd_vs_es6/
 
-# protractor, karma, jasmine
+# commonjs, amd, require
+https://www.leanpanda.com/blog/2015/06/28/amd-requirejs-commonjs-browserify/
+
+# karma setup
+https://scotch.io/tutorials/testing-angularjs-with-jasmine-and-karma-part-1#karma-setup
+https://karma-runner.github.io/1.0/index.html
+singleRun & autoWatch http://stackoverflow.com/questions/25199900/karma-test-runner-not-running-any-tests
+
+# jasmine
+https://jasmine.github.io/2.5/introduction
+
+# protractor
+http://www.protractortest.org/#/
+https://github.com/angular/protractor/blob/master/docs/faq.md
+example - https://github.com/blog-brunoscopelliti/todooo
+
+must unit-test services - business code
+should unit-test controllers
+should e2e test
+
+# systemjs
+https://github.com/systemjs/systemjs
+
+
+npm config set proxy http://proxy:3128
+npm config set https-proxy http://proxy:3128
+webdriver-manager --proxy http://proxy:3128 update
