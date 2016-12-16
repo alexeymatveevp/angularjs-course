@@ -41,4 +41,4 @@ while (i != path.length) {
     }
 }
 
-console.log(Math.abs( h ) + Math.abs(w));
+console.log(Math.abs(h) + Math.abs(w));
