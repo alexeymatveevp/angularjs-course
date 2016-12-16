@@ -1,4 +1,4 @@
-//angular.bootstrap(document);
+
 
 angular.module('app', []);
 //angular.module('app', []);
@@ -18,6 +18,8 @@ angular.module('app').controller('ctrl', function($scope, UnicornService) {
         console.log(old)
     })
 
+
+
     console.log($scope)
 
 
@@ -27,5 +29,7 @@ angular.module('app').controller('ctrl', function($scope, UnicornService) {
     })
 });
 
-
+//angular.element(function() {
+//    angular.bootstrap(document, ['app']);
+//});
 

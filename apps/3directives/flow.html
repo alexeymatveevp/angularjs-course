@@ -2,9 +2,24 @@
 <html ng-app="app">
 <head>
     <script src="../libs/angular.min.js"></script>
+    <script src="directives/module.js"></script>
+    <script src="directives/myDirective.js"></script>
     <script src="flow.js"></script>
 </head>
 <body ng-controller="ctrl">
+<input ng-model="name">
 
+<form>
+    <my-parent>
+        <my-directive consume-fn="consumeData(foo,data)" parent-property="parentProperty"></my-directive>
+    </my-parent>
+</form>
+
+<style>
+    my_directive {
+        display: inline-block;
+        border: 1px dashed gray;
+    }
+</style>
 </body>
 </html>

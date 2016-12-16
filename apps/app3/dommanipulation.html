@@ -4,7 +4,7 @@
     <script src="../libs/angular.min.js"></script>
     <script src="dommanipulation.js"></script>
 </head>
-<body>
+<body ng-init="max=123">
 max: <input ng-model="max">
 <random-number max="{{max}}"></random-number>
 </body>

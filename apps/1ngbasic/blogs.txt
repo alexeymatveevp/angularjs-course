@@ -1,6 +1,0 @@
-# migration to ng2
-http://paislee.io/migrating-to-angularjs-2-0/
-# critics ng2
-https://blog.dantup.com/2014/10/have-the-angular-team-lost-their-marbles/
-# directive and component in ng1.5
-https://toddmotto.com/exploring-the-angular-1-5-component-method/

@@ -14,7 +14,7 @@ singleRun & autoWatch http://stackoverflow.com/questions/25199900/karma-test-run
 https://jasmine.github.io/2.5/introduction
 
 # protractor
-http://www.protractortest.org/#/
+http://www.protractortest.org/#/api
 https://github.com/angular/protractor/blob/master/docs/faq.md
 example - https://github.com/blog-brunoscopelliti/todooo
 

@@ -6,11 +6,12 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "karma start",
-    "b1": "browserify apps/1ngbasic/flow.js > apps/1ngbasic/bundle.js",
-    "w1": "watchify apps/1ngbasic/flow.js -o apps/1ngbasic/bundle.js",
-    "b1min": "browserify -g uglifyify apps/1ngbasic/flow.js -o apps/1ngbasic/bundle.js",
-    "server": "http-server"
+    "unit": "karma start",
+    "b1": "./node_modules/.bin/browserify apps/1ngbasic/flow.js > apps/1ngbasic/bundle.js",
+    "w1": "./node_modules/.bin/watchify apps/1ngbasic/flow.js -o apps/1ngbasic/bundle.js",
+    "b1min": "./node_modules/.bin/browserify -g uglifyify apps/1ngbasic/flow.js -o apps/1ngbasic/bundle.js",
+    "server": "http-server",
+    "e2e": "./node_modules/protractor/bin/protractor protractor.conf.js"
   },
   "repository": {
     "type": "git",
@@ -36,14 +37,7 @@
     "webdriver-manager": "^10.2.10"
   },
   "dependencies": {
-    "angular": "^1.5.9",
-    "@angular/common": "~2.3.0",
-    "@angular/compiler": "~2.3.0",
-    "@angular/core": "~2.3.0",
-    "@angular/forms": "~2.3.0",
-    "@angular/http": "~2.3.0",
-    "@angular/platform-browser": "~2.3.0",
-    "@angular/platform-browser-dynamic": "~2.3.0",
-    "@angular/router": "~3.3.0"
+    "angular": "^1.5.9"
+
   }
 }

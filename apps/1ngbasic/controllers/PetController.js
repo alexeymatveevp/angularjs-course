@@ -64,7 +64,7 @@ module.exports = function($scope, $http, PetService) {
         }
     });
 
-    $http.buyPet = function(pet) {
+    $scope.buyPet = function(pet) {
         var boughtPet = angular.copy(pet);
         boughtPet.price = (Math.random() * 200) + 15;
         $scope.boughtPet = boughtPet;

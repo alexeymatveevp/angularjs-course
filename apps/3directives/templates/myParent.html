@@ -1,0 +1,10 @@
+<div>
+    <h4>Hi im parent</h4>
+    {{ ct.parentProperty }}
+    {{ parentProperty }}
+    <input ng-model="ct.parentProperty">
+    <button ng-click="ct.printScope()">print scope</button>
+    <ng-transclude>
+        <!-- child content -->
+    </ng-transclude>
+</div>

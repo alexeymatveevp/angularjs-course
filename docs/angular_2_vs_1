@@ -6,14 +6,15 @@ zone https://github.com/angular/zone.js/
 
 -------- Angular 1 ---------
 1 Controllers and scope   
-2 Simple js, no tools     
+2 Simple js, no tools, code right away
 3 $scope.apply for integration
 4 digest everything
 
 
 -------- Angular 2 ---------
+syntax changes
 1 Components and directives
-2 Typescript transpiler
+2 Typescript, but overhead, need bundler
 3 zone.js
-4 can set model observable and immutable
+4 can set model observable and immutable => better performance
 server side rendering https://universal.angular.io/
