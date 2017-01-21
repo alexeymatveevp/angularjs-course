@@ -1,0 +1,7 @@
++ create notebook
++ create note
++ group by notebook
++ open notes
++ edit notes
++ export all to json
++ import from json

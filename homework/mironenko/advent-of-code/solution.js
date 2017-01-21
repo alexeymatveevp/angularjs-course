@@ -35,6 +35,7 @@ function calculate(input) {
     let currentPoint = new Axis(0, 0);
     let history = [];
 
+    mainLoop:
     for (let i = 0; i < input.length; i++) {
         currentDirection = retrieveNextDirection(currentDirection, input[i].charAt(0));
         let steps = input[i].substring(1, input[i].length);
@@ -42,7 +43,7 @@ function calculate(input) {
             currentPoint.add(currentDirection.x, currentDirection.y);
 
             if (contains(history, currentPoint)) {
-                return Math.abs(currentPoint.x) + Math.abs(currentPoint.y);
+                break mainLoop;
             }
             history.push(new Axis(currentPoint.x, currentPoint.y));
         }

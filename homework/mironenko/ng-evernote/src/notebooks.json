@@ -1,0 +1,24 @@
+[
+  {
+    "id": 0,
+    "name": "Imported Notebook",
+    "notes": [
+      {
+        "id": 0,
+        "title": "Imported note",
+        "text": "Some imported content"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Imported Notebook 2",
+    "notes": [
+      {
+        "id": 0,
+        "title": "TEST NOTE",
+        "text": "TEST CONTENT"
+      }
+    ]
+  }
+]
