@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="root" ng-cloak>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../apps/libs/angular.min.js"></script>
+    <script src="angular-sanitize.min.js"></script>
+    <script src="ui-bootstrap-tpls-2.4.0.min.js"></script>
+    <script src="scripts/root.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .md-button {
+            padding: 0 6px 0 6px;
+            margin: 6px 8px 6px 8px;
+            min-width: 88px;
+            border-radius: 3px;
+            font-size: 14px;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration:none;
+            border: none;
+            outline: none;
+            width: 200px;
+        }
+
+        .md-button.md-cornered {
+            border-radius: 0;
+        }
+        .md-button.md-raised:not([disabled]) {
+             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+         }
+
+        .md-button:not([disabled]):hover {
+            background-color: rgba(193, 193, 193, 0.96);
+            color: rgba(44, 65, 164, 0.96);
+            transition: 0.3s;
+        }
+        table{
+            margin-top: 10px;
+        }
+        table, th , td  {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        table tr:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div ng-controller="index">
+    <div>
+        <button ng-click="getLikedQuotes()" class="md-button md-raised md-cornered">Show Liked Quotes</button>
+    </div>
+    <div>
+        <button ng-click="saveToPc(likedQuotes)" class="md-button md-raised md-cornered">Export Liked Quotes &#x261B; </button>
+    </div>
+    <div>
+        <label for="inputFile" class="md-button md-raised md-cornered">Import liked quotes &#x261A;</label>
+        <input type="file" fileread="likedQuotes" id="inputFile" >
+    </div>
+    <div>
+        <button ng-click="getQuote()" class="md-button md-raised md-cornered">Request quotes</button>
+        <div class="btn-group">
+            <label class="btn btn-primary" ng-model="numberOfQuotes" uib-btn-radio="'1'">1</label>
+            <label class="btn btn-primary" ng-model="numberOfQuotes" uib-btn-radio="'10'">10</label>
+            <label class="btn btn-primary" ng-model="numberOfQuotes" uib-btn-radio="'40'">40</label>
+        </div>
+    </div>
+    <div>
+        <table id="quotes_table">
+            <tbody>
+            <tr ng-repeat="quote in quotes">
+                <td ng-show="quotesRegyme" width="1%">
+                    <button ng-click="likeQuote(quote)">&hearts;</button>
+                </td>
+                <td ng-hide="quotesRegyme" width="1%">
+                    <button ng-click="unlikeQuote(quote)">&#x2661;</button>
+                </td>
+                <td ng-bind-html="quote.content" width="50%"></td>
+                <td ng-bind-html="quote.title" width="10%"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--<div ng-controller = "UploadController">-->
+<!--<form>-->
+<!--<input type="file" ng-file-select="onFileSelect($files)">-->
+<!--<b>Preview:</b><br />-->
+<!--<i ng-hide="imageSrc">No image choosed</i>-->
+<!--<img ng-src="{{imageSrc}}" /><br/>-->
+<!--<b>Progress:</b>-->
+<!--<progress value="{{progress}}"></progress>-->
+<!--</form>-->
+<!--</div>-->
+</body>
+</html>
